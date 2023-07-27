@@ -16,10 +16,22 @@ class NoteTakingApp extends React.Component {
         }
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this)
+        this.onArchiveHandler = this.onArchiveHandler.bind(this)
     }
 
     onDeleteHandler(id) {
         const notes = this.state.notes.filter((note) => note.id !== id)
+        this.setState({ notes })
+    }
+
+    onArchiveHandler(id) {
+        const notes = this.state.notes.map((note) => {
+            if (note.id === id) {
+                note.archived = !note.archived
+                return note
+            }
+            return note
+        })
         this.setState({ notes })
     }
 
@@ -34,6 +46,7 @@ class NoteTakingApp extends React.Component {
                         notes={this.state.notes}
                         showFormattedDate={showFormattedDate}
                         onDelete={this.onDeleteHandler}
+                        onArchive={this.onArchiveHandler}
                     />
                 </main>
             </React.Fragment>
