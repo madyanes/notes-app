@@ -43,3 +43,26 @@ section.new-note>form>:where(input, textarea, button) {
     padding: 0 1em;
     margin: 0 1em;
 }
+
+.main-menu {
+    width: 70vw;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0 1em;
+    font-size: 1.5em;
+}
+
+.main-menu ul li {
+    border: 1px solid #ccc;
+    padding: 0 1em;
+}
+
+.main-menu ul li a {
+    text-decoration: none;
+    color: inherit;
+}
