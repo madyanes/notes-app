@@ -1,8 +1,9 @@
 import React from 'react'
-import { getInitialData } from '../utils'
+import { getInitialData, showFormattedDate } from '../utils'
 import Header from './Header'
 import NewNote from './NewNoteInput'
 import Navigation from './Navigation'
+import AllNotes from './AllNotes'
 
 import '../assets/css/style.css'
 
@@ -22,6 +23,7 @@ class NoteTakingApp extends React.Component {
                 <main>
                     <NewNote />
                     <Navigation />
+                    <AllNotes notes={this.state.notes} showFormattedDate={showFormattedDate} />
                 </main>
             </React.Fragment>
         )

@@ -47,7 +47,6 @@ section.new-note>form>:where(input, textarea, button) {
 .main-menu {
     width: 70vw;
     margin: 0 auto;
-    border-bottom: 1px solid #ccc;
 }
 
 .main-menu ul {
@@ -65,4 +64,38 @@ section.new-note>form>:where(input, textarea, button) {
 .main-menu ul li a {
     text-decoration: none;
     color: inherit;
+}
+
+.active-notes {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    padding: .3em;
+}
+
+.active-notes article {
+    flex-basis: 25%;
+    padding: .5em;
+    font-size: small;
+}
+
+.note-item-container {
+    padding: .5em;
+    border: 1px solid #ccc;
+    height: 90%;
+}
+
+.note-item-actions {
+    display: flex;
+}
+
+.note-item-actions button {
+    flex-basis: 50%;
+}
+
+.date {
+    font-size: smaller;
+    padding: .75em 0;
 }
