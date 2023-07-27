@@ -7,9 +7,11 @@ const ArchivedNotes = ({ notes, showFormattedDate }) => {
             <h1>Archived Notes</h1>
             <div className="active-notes">
                 {
-                    notes.map((note) => (
-                        <ArchivedNoteItems key={note.id} note={note} showFormattedDate={showFormattedDate} />
-                    ))
+                    notes
+                        .filter((note) => note.archived === true)
+                        .map((note) => (
+                            <ArchivedNoteItems key={note.id} note={note} showFormattedDate={showFormattedDate} />
+                        ))
                 }
             </div>
         </section>
