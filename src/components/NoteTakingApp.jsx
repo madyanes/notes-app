@@ -1,6 +1,7 @@
 import React from 'react'
 import { getInitialData } from '../utils'
 import Header from './Header'
+import NewNote from './NewNoteInput'
 
 import '../assets/css/style.css'
 
@@ -17,6 +18,9 @@ class NoteTakingApp extends React.Component {
         return (
             <React.Fragment>
                 <Header />
+                <main>
+                    <NewNote />
+                </main>
             </React.Fragment>
         )
     }

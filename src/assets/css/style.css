@@ -3,6 +3,7 @@
 *,
 *::before,
 *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -15,4 +16,30 @@ body {
     border-bottom: 1px solid #ccc;
     padding: 1em 1em;
     color: #2a81d3;
+}
+
+section.new-note {
+    width: 30vw;
+    margin: 1em auto;
+    padding-bottom: 1.2em;
+    color: #2a81d3;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+section.new-note h1 {
+    padding: .5em 1em;
+}
+
+section.new-note>form {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+section.new-note>form>:where(input, textarea, button) {
+    font-size: larger;
+    border: 1px solid #ccc;
+    padding: 0 1em;
+    margin: 0 1em;
 }
