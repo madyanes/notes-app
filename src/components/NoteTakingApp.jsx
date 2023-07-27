@@ -1,5 +1,8 @@
 import React from 'react'
 import { getInitialData } from '../utils'
+import Header from './Header'
+
+import '../assets/css/style.css'
 
 class NoteTakingApp extends React.Component {
     constructor(props) {
@@ -10,7 +13,13 @@ class NoteTakingApp extends React.Component {
         }
     }
 
-    render() { }
+    render() {
+        return (
+            <React.Fragment>
+                <Header />
+            </React.Fragment>
+        )
+    }
 }
 
 export default NoteTakingApp
