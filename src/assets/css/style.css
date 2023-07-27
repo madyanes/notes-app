@@ -66,9 +66,12 @@ section.new-note>form>:where(input, textarea, button) {
     color: inherit;
 }
 
-.active-notes {
+.notes {
     width: 70vw;
-    margin: 0 auto;
+    margin: 2em auto 0;
+}
+
+.active-notes {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #ccc;
