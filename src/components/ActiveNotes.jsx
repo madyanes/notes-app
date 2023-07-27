@@ -1,7 +1,7 @@
 import React from 'react'
 import ActiveNoteItems from './ActiveNoteItems'
 
-const ActiveNotes = ({ notes, showFormattedDate }) => {
+const ActiveNotes = ({ notes, showFormattedDate, onDelete }) => {
     return (
         <section className='notes'>
             <h1>Active Notes</h1>
@@ -10,7 +10,7 @@ const ActiveNotes = ({ notes, showFormattedDate }) => {
                     notes
                         .filter((note) => note.archived === false)
                         .map((note) => (
-                            <ActiveNoteItems key={note.id} note={note} showFormattedDate={showFormattedDate} />
+                            <ActiveNoteItems key={note.id} note={note} showFormattedDate={showFormattedDate} onDelete={onDelete} />
                         ))
                 }
             </div>

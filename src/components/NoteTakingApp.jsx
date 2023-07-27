@@ -14,6 +14,13 @@ class NoteTakingApp extends React.Component {
         this.state = {
             notes: getInitialData(),
         }
+
+        this.onDeleteHandler = this.onDeleteHandler.bind(this)
+    }
+
+    onDeleteHandler(id) {
+        const notes = this.state.notes.filter((note) => note.id !== id)
+        this.setState({ notes })
     }
 
     render() {
@@ -23,7 +30,11 @@ class NoteTakingApp extends React.Component {
                 <main>
                     <NewNote />
                     <Navigation />
-                    <AllNotes notes={this.state.notes} showFormattedDate={showFormattedDate} />
+                    <AllNotes
+                        notes={this.state.notes}
+                        showFormattedDate={showFormattedDate}
+                        onDelete={this.onDeleteHandler}
+                    />
                 </main>
             </React.Fragment>
         )
