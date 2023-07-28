@@ -36,12 +36,14 @@ class NewNote extends React.Component {
                         placeholder='Judul catatan'
                         maxLength={50}
                         onChange={this.onChangeInputTitle}
+                        required
                     />
                     <textarea
                         cols="30"
                         rows="10"
                         placeholder='Isi catatan'
                         onChange={this.onChangeInputContent}
+                        required
                     ></textarea>
                     <button>Buat</button>
                 </form>
