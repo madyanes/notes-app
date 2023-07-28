@@ -44,6 +44,14 @@ section.new-note>form>:where(input, textarea, button) {
     margin: 0 1em;
 }
 
+.character-count {
+    padding-right: 1em;
+}
+
+.character-count p {
+    text-align: right;
+}
+
 .search-notes {
     width: 70vw;
     margin: 0 auto;
