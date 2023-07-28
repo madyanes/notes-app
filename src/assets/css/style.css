@@ -12,6 +12,11 @@ body {
     font-family: Raleway;
 }
 
+h1,
+h2 {
+    color: #2a81d3;
+}
+
 #root>header {
     border-bottom: 1px solid #ccc;
     padding: 1em 1em;
@@ -100,4 +105,18 @@ section.new-note>form>:where(input, textarea, button) {
 .date {
     font-size: smaller;
     padding: .75em 0;
+}
+
+footer {
+    margin-top: 5em;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 2em 0;
+    color: #2a81d3;
 }

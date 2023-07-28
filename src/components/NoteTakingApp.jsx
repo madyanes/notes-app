@@ -4,6 +4,7 @@ import Header from './Header'
 import NewNote from './NewNoteInput'
 import SearchBar from './SearchBar'
 import AllNotes from './AllNotes'
+import Footer from './Footer'
 
 import '../assets/css/style.css'
 
@@ -78,6 +79,7 @@ class NoteTakingApp extends React.Component {
                         onArchive={this.onArchiveHandler}
                     />
                 </main>
+                <Footer />
             </React.Fragment>
         )
     }
