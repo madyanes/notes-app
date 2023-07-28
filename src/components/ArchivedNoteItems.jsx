@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ArchivedNoteItems = ({ note, showFormattedDate }) => {
+const ArchivedNoteItems = ({ note, showFormattedDate, onDelete }) => {
     return (
         <article>
             <div className='note-item-container'>
@@ -10,7 +10,7 @@ const ArchivedNoteItems = ({ note, showFormattedDate }) => {
             </div>
             <div className="note-item-actions">
                 <button>Arsipkan</button>
-                <button>Hapus</button>
+                <button onClick={() => onDelete(note.id)}>Hapus</button>
             </div>
         </article>
     )

@@ -11,7 +11,11 @@ const AllNotes = ({ notes, showFormattedDate, onDelete, onArchive }) => {
                 onDelete={onDelete}
                 onArchive={onArchive}
             />
-            <ArchivedNotes notes={notes} showFormattedDate={showFormattedDate} />
+            <ArchivedNotes
+                notes={notes}
+                showFormattedDate={showFormattedDate}
+                onDelete={onDelete}
+            />
         </>
     )
 }
