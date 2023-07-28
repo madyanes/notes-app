@@ -22,6 +22,7 @@ class NewNote extends React.Component {
         e.preventDefault();
         const { title, content } = this.state
         this.props.onAddNoteHandler({ title, content })
+        this.setState({ title: '', content: '' })
     }
 
     render() {
@@ -34,6 +35,7 @@ class NewNote extends React.Component {
                     </div>
                     <input type="text"
                         placeholder='Judul catatan'
+                        value={this.state.title}
                         maxLength={50}
                         onChange={this.onChangeInputTitle}
                         required
@@ -42,6 +44,7 @@ class NewNote extends React.Component {
                         cols="30"
                         rows="10"
                         placeholder='Isi catatan'
+                        value={this.state.content}
                         onChange={this.onChangeInputContent}
                         required
                     ></textarea>
