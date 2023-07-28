@@ -15,6 +15,7 @@ const AllNotes = ({ notes, showFormattedDate, onDelete, onArchive }) => {
                 notes={notes}
                 showFormattedDate={showFormattedDate}
                 onDelete={onDelete}
+                onArchive={onArchive}
             />
         </>
     )

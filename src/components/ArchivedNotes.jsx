@@ -1,7 +1,7 @@
 import React from 'react'
 import ArchivedNoteItems from './ArchivedNoteItems'
 
-const ArchivedNotes = ({ notes, showFormattedDate, onDelete }) => {
+const ArchivedNotes = ({ notes, showFormattedDate, onDelete, onArchive }) => {
     return (
         <section className='notes'>
             <h1>Archived Notes</h1>
@@ -15,6 +15,7 @@ const ArchivedNotes = ({ notes, showFormattedDate, onDelete }) => {
                                 note={note}
                                 showFormattedDate={showFormattedDate}
                                 onDelete={onDelete}
+                                onArchive={onArchive}
                             />
                         ))
                 }
