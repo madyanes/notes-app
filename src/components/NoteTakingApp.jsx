@@ -47,12 +47,29 @@ class NoteTakingApp extends React.Component {
         }
     }
 
+    onAddNoteHandler = ({ title, content }) => {
+        this.setState((prevState) => {
+            return {
+                notes: [
+                    ...prevState.notes,
+                    {
+                        id: +new Date(),
+                        title: title,
+                        body: content,
+                        createdAt: new Date(),
+                        archived: false,
+                    }
+                ]
+            }
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
                 <Header />
                 <main>
-                    <NewNote />
+                    <NewNote onAddNoteHandler={this.onAddNoteHandler} />
                     <SearchBar onSearch={this.onSearch} />
                     <AllNotes
                         notes={this.state.notes}
