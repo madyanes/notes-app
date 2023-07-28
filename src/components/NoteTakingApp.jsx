@@ -14,16 +14,18 @@ class NoteTakingApp extends React.Component {
 
         this.state = {
             notes: getInitialData(),
+            showedNotes: getInitialData(),
         }
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this)
         this.onArchiveHandler = this.onArchiveHandler.bind(this)
         this.onSearch = this.onSearch.bind(this)
+        this.onAddNoteHandler = this.onAddNoteHandler.bind(this)
     }
 
     onDeleteHandler(id) {
         const notes = this.state.notes.filter((note) => note.id !== id)
-        this.setState({ notes })
+        this.setState({ notes, showedNotes: notes })
     }
 
     onArchiveHandler(id) {
@@ -34,35 +36,34 @@ class NoteTakingApp extends React.Component {
             }
             return note
         })
-        this.setState({ notes })
+        this.setState({ notes, showedNotes: notes })
     }
 
     onSearch(text) {
+        const { notes } = this.state
         if (text.trim() === '') {
-            this.setState({ notes: getInitialData() })
+            this.setState({ showedNotes: notes })
         } else {
-            const filteredNotes = this.state.notes.filter((notes) => {
+            const filteredNotes = notes.filter((notes) => {
                 return notes.title.toLowerCase().includes(text.toLowerCase())
             })
-            this.setState({ notes: filteredNotes })
+            this.setState({ showedNotes: filteredNotes })
         }
     }
 
     onAddNoteHandler = ({ title, content }) => {
-        this.setState((prevState) => {
-            return {
-                notes: [
-                    ...prevState.notes,
-                    {
-                        id: +new Date(),
-                        title: title,
-                        body: content,
-                        createdAt: new Date(),
-                        archived: false,
-                    }
-                ]
-            }
-        })
+        const newNote = {
+            id: +new Date(),
+            title: title,
+            body: content,
+            createdAt: new Date(),
+            archived: false,
+        }
+
+        this.setState((prevState) => ({
+            notes: [...prevState.notes, newNote],
+            showedNotes: [...prevState.showedNotes, newNote],
+        }))
     }
 
     render() {
@@ -73,7 +74,7 @@ class NoteTakingApp extends React.Component {
                     <NewNote onAddNoteHandler={this.onAddNoteHandler} />
                     <SearchBar onSearch={this.onSearch} />
                     <AllNotes
-                        notes={this.state.notes}
+                        notes={this.state.showedNotes}
                         showFormattedDate={showFormattedDate}
                         onDelete={this.onDeleteHandler}
                         onArchive={this.onArchiveHandler}
